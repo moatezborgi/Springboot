@@ -9,4 +9,5 @@ public interface IStockService {
     public Stock addStock(Stock s);
     public Stock updateStock(Stock u);
     public Stock retrieveStock(Long id);
+    public String retrieveStatusStock();
 }

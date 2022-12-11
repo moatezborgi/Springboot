@@ -23,11 +23,14 @@ public class FactureConroller {
     }
 
     @PutMapping
-    public void cancelFacture(@RequestBody long id) {
+    public void cancelFacture(@PathVariable long id) {
           iFactureService.cancelFacture(id);
     }
     @GetMapping("getbyclient/{idClient}")
     public List<Facture> getFacturesByClient(@PathVariable long idClient) {
         return iFactureService.getFacturesByClient(idClient);
     }
+
+    @PostMapping("{idClient}")
+    public Facture addFacture(@RequestBody Facture f, @PathVariable Long idClient){return iFactureService.addFacture(f,idClient);}
 }
